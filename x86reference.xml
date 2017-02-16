@@ -6273,13 +6273,13 @@ Should I add this comment?
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
       </entry>
-      <entry op_size="0">
+      <entry op_size="0" lock="yes">
 	<opcd_ext>2</opcd_ext>
 	<syntax><mnem>NOT</mnem><dst><a>E</a><t>b</t></dst></syntax>
         <grp1>gen</grp1><grp2>logical</grp2>
 	<note><brief>One's Complement Negation</brief></note>
       </entry>
-      <entry op_size="0">
+      <entry op_size="0" lock="yes">
 	<opcd_ext>3</opcd_ext>
 	<syntax><mnem>NEG</mnem><dst><a>E</a><t>b</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
@@ -6353,13 +6353,13 @@ Should I add this comment?
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
       </entry>
-      <entry op_size="1">
+      <entry op_size="1" lock="yes">
 	<opcd_ext>2</opcd_ext>
 	<syntax><mnem>NOT</mnem><dst><a>E</a><t>vqp</t></dst></syntax>
         <grp1>gen</grp1><grp2>logical</grp2>
 	<note><brief>One's Complement Negation</brief></note>
       </entry>
-      <entry op_size="1">
+      <entry op_size="1" lock="yes">
 	<opcd_ext>3</opcd_ext>
 	<syntax><mnem>NEG</mnem><dst><a>E</a><t>vqp</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
@@ -6471,14 +6471,14 @@ Should I add this comment?
     </pri_opcd>
 
     <pri_opcd value="FE">
-      <entry op_size="0">
+      <entry op_size="0" lock="yes">
 	<opcd_ext>0</opcd_ext>
         <syntax><mnem>INC</mnem><dst><a>E</a><t>b</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
         <modif_f>oszap</modif_f><def_f>oszap</def_f>
         <note><brief>Increment by 1</brief></note>
       </entry>
-      <entry op_size="0">
+      <entry op_size="0" lock="yes">
 	<opcd_ext>1</opcd_ext>
         <syntax><mnem>DEC</mnem><dst><a>E</a><t>b</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
@@ -6488,14 +6488,14 @@ Should I add this comment?
     </pri_opcd>
 
     <pri_opcd value="FF">
-      <entry op_size="1">
+      <entry op_size="1" lock="yes">
 	<opcd_ext>0</opcd_ext>
         <syntax><mnem>INC</mnem><dst><a>E</a><t>vqp</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
         <modif_f>oszap</modif_f><def_f>oszap</def_f>
         <note><brief>Increment by 1</brief></note>
       </entry>
-      <entry op_size="1">
+      <entry op_size="1" lock="yes">
 	<opcd_ext>1</opcd_ext>
         <syntax><mnem>DEC</mnem><dst><a>E</a><t>vqp</t></dst></syntax>
         <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
