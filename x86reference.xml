@@ -1847,7 +1847,7 @@ Should I add this comment?
     <pri_opcd value="84">
       <entry direction="0" op_size="0" r="yes">
 	<syntax><mnem>TEST</mnem><src><a>E</a><t>b</t></src><src><a>G</a><t>b</t></src></syntax>
-        <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
+        <grp1>gen</grp1><grp2>logical</grp2>
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
       </entry>
@@ -1856,7 +1856,7 @@ Should I add this comment?
     <pri_opcd value="85">
       <entry direction="0" op_size="1" r="yes">
 	<syntax><mnem>TEST</mnem><src><a>E</a><t>vqp</t></src><src><a>G</a><t>vqp</t></src></syntax>
-        <grp1>gen</grp1><grp2>arith</grp2><grp3>binary</grp3>
+        <grp1>gen</grp1><grp2>logical</grp2>
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
       </entry>
