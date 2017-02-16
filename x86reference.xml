@@ -6341,14 +6341,14 @@ Should I add this comment?
     <pri_opcd value="F7">
       <entry op_size="1">
 	<opcd_ext>0</opcd_ext>
-	<syntax><mnem>TEST</mnem><src><a>E</a><t>vqp</t></src><src><a>I</a><t>vqp</t></src></syntax>
+	<syntax><mnem>TEST</mnem><src><a>E</a><t>vqp</t></src><src><a>I</a><t>vds</t></src></syntax>
         <grp1>gen</grp1><grp2>logical</grp2>
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
       </entry>
       <entry op_size="1" alias="F7_0" doc="u" doc_ref="gen_note_TEST_F6_1_F7_1">
 	<opcd_ext>1</opcd_ext>
-	<syntax><mnem>TEST</mnem><src><a>E</a><t>vqp</t></src><src><a>I</a><t>vqp</t></src></syntax>
+	<syntax><mnem>TEST</mnem><src><a>E</a><t>vqp</t></src><src><a>I</a><t>vds</t></src></syntax>
         <grp1>gen</grp1><grp2>logical</grp2>
         <modif_f>oszapc</modif_f><def_f>oszpc</def_f><undef_f>a</undef_f><f_vals>oc</f_vals>
         <note><brief>Logical Compare</brief></note>
