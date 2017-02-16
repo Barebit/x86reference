@@ -205,7 +205,7 @@
 
  <!-- x86reference@version: current version (completeness) of the reference -->
 
-<!ATTLIST x86reference	version			NMTOKEN			#REQUIRED>
+<!ATTLIST x86reference	version			NMTOKEN			#IMPLIED>
 
  <!--  two-byte@id: used only as an anchor for 0F opcode -->
 
