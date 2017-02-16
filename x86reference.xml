@@ -10065,7 +10065,7 @@ Should I add this comment?
         <pref>66</pref>
         <sec_opcd escape="yes">20</sec_opcd>
         <proc_start lat_step="yes">12</proc_start>
-	<syntax mod="nomem">
+	<syntax mod="mem">
 	  <mnem>PINSRB</mnem>
 	  <dst><a>V</a><t>dq</t></dst>   
 	  <src><a>M</a><t>b</t></src>   
@@ -10073,7 +10073,7 @@ Should I add this comment?
 	</syntax>
         <!-- to keep the syntax of SSE zero-extending instructions
 	consistent, Rdqp must be used instead of just Rd -->
-	<syntax mod="mem">
+	<syntax mod="nomem">
 	  <mnem>PINSRB</mnem>
 	  <dst><a>V</a><t>dq</t></dst>   
 	  <src><a>R</a><t>dqp</t></src>   <!-- effective type is 'b' -->
