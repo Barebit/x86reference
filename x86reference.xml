@@ -1486,7 +1486,7 @@ Should I add this comment?
 	<syntax><mnem>JE</mnem><src><a>J</a><t>bs</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>z</test_f>
-	<note><brief>Jump short if zero/equal (ZF=0)</brief></note>
+	<note><brief>Jump short if zero/equal (ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -1496,7 +1496,7 @@ Should I add this comment?
 	<syntax><mnem>JNE</mnem><src><a>J</a><t>bs</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>z</test_f>
-	<note><brief>Jump short if not zero/not equal (ZF=1)</brief></note>
+	<note><brief>Jump short if not zero/not equal (ZF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -1507,7 +1507,7 @@ Should I add this comment?
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<!-- 1.02 <test_f>cz</test_f>-->
 	<test_f>zc</test_f>
-	<note><brief>Jump short if below or equal/not above (CF=1 AND ZF=1)</brief></note>
+	<note><brief>Jump short if below or equal/not above (CF=1 OR ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -1556,7 +1556,7 @@ Should I add this comment?
 	<syntax><mnem>JPO</mnem><src><a>J</a><t>bs</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>p</test_f>
-	<note><brief>Jump short if not parity/parity odd</brief></note>
+	<note><brief>Jump short if not parity/parity odd (PF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -10356,7 +10356,7 @@ Should I add this comment?
 	<syntax><mnem>CMOVE</mnem><dst depend="no"><a>G</a><t>vqp</t></dst><src><a>E</a><t>vqp</t></src></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>z</test_f>
-	<note><brief>Conditional Move - zero/equal (ZF=0)</brief></note>
+	<note><brief>Conditional Move - zero/equal (ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -10367,7 +10367,7 @@ Should I add this comment?
 	<syntax><mnem>CMOVNE</mnem><dst depend="no"><a>G</a><t>vqp</t></dst><src><a>E</a><t>vqp</t></src></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>z</test_f>
-	<note><brief>Conditional Move - not zero/not equal (ZF=1)</brief></note>
+	<note><brief>Conditional Move - not zero/not equal (ZF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -10379,7 +10379,7 @@ Should I add this comment?
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<!-- 1.02 <test_f>cz</test_f>-->
 	<test_f>zc</test_f>
-	<note><brief>Conditional Move - below or equal/not above (CF=1 AND ZF=1)</brief></note>
+	<note><brief>Conditional Move - below or equal/not above (CF=1 OR ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -10433,7 +10433,7 @@ Should I add this comment?
 	<syntax><mnem>CMOVPO</mnem><dst depend="no"><a>G</a><t>vqp</t></dst><src><a>E</a><t>vqp</t></src></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>p</test_f>
-	<note><brief>Conditional Move - not parity/parity odd</brief></note>
+	<note><brief>Conditional Move - not parity/parity odd (PF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12308,7 +12308,7 @@ Should I add this comment?
 	<syntax><mnem>JO</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>o</test_f>
-	<note><brief>Jump short if overflow (OF=1)</brief></note>
+	<note><brief>Jump near if overflow (OF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12318,7 +12318,7 @@ Should I add this comment?
 	<syntax><mnem>JNO</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>o</test_f>
-	<note><brief>Jump short if not overflow (OF=0)</brief></note>
+	<note><brief>Jump near if not overflow (OF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12330,7 +12330,7 @@ Should I add this comment?
 	<syntax><mnem>JC</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>c</test_f>
-	<note><brief>Jump short if below/not above or equal/carry (CF=1)</brief></note>
+	<note><brief>Jump near if below/not above or equal/carry (CF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12342,7 +12342,7 @@ Should I add this comment?
 	<syntax><mnem>JNC</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>c</test_f>
-	<note><brief>Jump short if not below/above or equal/not carry (CF=0)</brief></note>
+	<note><brief>Jump near if not below/above or equal/not carry (CF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12353,7 +12353,7 @@ Should I add this comment?
 	<syntax><mnem>JE</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>z</test_f>
-	<note><brief>Jump short if zero/equal (ZF=0)</brief></note>
+	<note><brief>Jump near if zero/equal (ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12364,7 +12364,7 @@ Should I add this comment?
 	<syntax><mnem>JNE</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>z</test_f>
-	<note><brief>Jump short if not zero/not equal (ZF=1)</brief></note>
+	<note><brief>Jump near if not zero/not equal (ZF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12376,7 +12376,7 @@ Should I add this comment?
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<!-- 1.02 <test_f>cz</test_f>-->
 	<test_f>zc</test_f>
-	<note><brief>Jump short if below or equal/not above (CF=1 AND ZF=1)</brief></note>
+	<note><brief>Jump near if below or equal/not above (CF=1 OR ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12388,7 +12388,7 @@ Should I add this comment?
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<!-- 1.02 <test_f>cz</test_f>-->
 	<test_f>zc</test_f>
-	<note><brief>Jump short if not below or equal/above (CF=0 AND ZF=0)</brief></note>
+	<note><brief>Jump near if not below or equal/above (CF=0 AND ZF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12398,7 +12398,7 @@ Should I add this comment?
 	<syntax><mnem>JS</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>s</test_f>
-	<note><brief>Jump short if sign (SF=1)</brief></note>
+	<note><brief>Jump near if sign (SF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12408,7 +12408,7 @@ Should I add this comment?
 	<syntax><mnem>JNS</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>s</test_f>
-	<note><brief>Jump short if not sign (SF=0)</brief></note>
+	<note><brief>Jump near if not sign (SF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12419,7 +12419,7 @@ Should I add this comment?
 	<syntax><mnem>JPE</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>p</test_f>
-	<note><brief>Jump short if parity/parity even (PF=1)</brief></note>
+	<note><brief>Jump near if parity/parity even (PF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12430,7 +12430,7 @@ Should I add this comment?
 	<syntax><mnem>JPO</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>p</test_f>
-	<note><brief>Jump short if not parity/parity odd</brief></note>
+	<note><brief>Jump near if not parity/parity odd (PF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12441,7 +12441,7 @@ Should I add this comment?
 	<syntax><mnem>JNGE</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>os</test_f>
-	<note><brief>Jump short if less/not greater (SF!=OF)</brief></note>
+	<note><brief>Jump near if less/not greater (SF!=OF)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12452,7 +12452,7 @@ Should I add this comment?
 	<syntax><mnem>JGE</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>os</test_f>
-	<note><brief>Jump short if not less/greater or equal (SF=OF)</brief></note>
+	<note><brief>Jump near if not less/greater or equal (SF=OF)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12463,7 +12463,7 @@ Should I add this comment?
 	<syntax><mnem>JNG</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>osz</test_f>
-	<note><brief>Jump short if less or equal/not greater ((ZF=1) OR (SF!=OF))</brief></note>
+	<note><brief>Jump near if less or equal/not greater ((ZF=1) OR (SF!=OF))</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12474,7 +12474,7 @@ Should I add this comment?
 	<syntax><mnem>JG</mnem><src><a>J</a><t>vds</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
 	<test_f>osz</test_f>
-	<note><brief>Jump short if not less nor equal/greater ((ZF=0) AND (SF=OF))</brief></note>
+	<note><brief>Jump near if not less nor equal/greater ((ZF=0) AND (SF=OF))</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12534,7 +12534,7 @@ Should I add this comment?
 	<syntax><mnem>SETE</mnem><dst depend="no"><a>E</a><t>b</t></dst></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>z</test_f>
-	<note><brief>Set Byte on Condition - zero/equal (ZF=0)</brief></note>
+	<note><brief>Set Byte on Condition - zero/equal (ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12546,7 +12546,7 @@ Should I add this comment?
 	<syntax><mnem>SETNE</mnem><dst depend="no"><a>E</a><t>b</t></dst></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>z</test_f>
-	<note><brief>Set Byte on Condition - not zero/not equal (ZF=1)</brief></note>
+	<note><brief>Set Byte on Condition - not zero/not equal (ZF=0)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12559,7 +12559,7 @@ Should I add this comment?
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<!-- 1.02 <test_f>cz</test_f>-->
 	<test_f>zc</test_f>
-	<note><brief>Set Byte on Condition - below or equal/not above (CF=1 AND ZF=1)</brief></note>
+	<note><brief>Set Byte on Condition - below or equal/not above (CF=1 OR ZF=1)</brief></note>
       </entry>
     </pri_opcd>
 
@@ -12618,7 +12618,7 @@ Should I add this comment?
 	<syntax><mnem>SETPO</mnem><dst depend="no"><a>E</a><t>b</t></dst></syntax>
 	<grp1>gen</grp1><grp2>datamov</grp2>
 	<test_f>p</test_f>
-	<note><brief>Set Byte on Condition - not parity/parity odd</brief></note>
+	<note><brief>Set Byte on Condition - not parity/parity odd (PF=0)</brief></note>
       </entry>
     </pri_opcd>
 
