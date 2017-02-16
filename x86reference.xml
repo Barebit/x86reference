@@ -10094,13 +10094,13 @@ Should I add this comment?
 	<syntax mod="mem">
 	  <mnem>INSERTPS</mnem>
 	  <dst><a>V</a><t>ps</t></dst>
-	  <src><a>U</a><t>ps</t></src>
+	  <src><a>M</a><t>d</t></src>
           <src><a>I</a><t>b</t></src>
 	</syntax>
 	<syntax mod="nomem">
 	  <mnem>INSERTPS</mnem>
 	  <dst><a>V</a><t>ps</t></dst>
-	  <src><a>M</a><t>d</t></src>
+	  <src><a>U</a><t>ps</t></src>
           <src><a>I</a><t>b</t></src>
 	</syntax>
 	<instr_ext>sse41</instr_ext>
