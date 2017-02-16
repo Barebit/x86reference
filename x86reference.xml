@@ -12237,7 +12237,7 @@ Should I add this comment?
         <syntax>
           <mnem>MOVQ</mnem>
           <dst depend="no"><a>E</a><t>qp</t></dst>
-          <src><a>E</a><t>dq </t></src>
+          <src><a>E</a><t>dq</t></src>
         </syntax>
         <instr_ext>sse2</instr_ext>
         <grp1>simdint</grp1>
