@@ -1,53 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE x86reference SYSTEM "x86reference.dtd">
 
-<!-- Visit http://ref.x86asm.net/ -->
-
-<!--
-
-Author: Karel Lejska a.k.a. MazeGen (mazegen gmail com)
-
-Short Description:
-
-This reference is intended to be precise opcode and instruction
-set reference (including x86-64). Its principal aim is exact
-definition of instruction parameters and attributes.
-
-- Minor Issues:
-
-83/1, 83/4, 83/6:
-These short forms of OR, AND, and XOR instructions are documented
-since 80386. They were probably working since 8086, 80186
-or 80286, but I have no trustworthy information regarding this issue.
-
-D9/3 mod=11, DF/2 mod=11, DF/3 mod=11:
-These encodings are documented in Intel 80287 manual at least. They
-were probably working since 8086, 80186 or 80286, but I have no
-trustworthy information regarding this issue.
-
-0F0D:
-I am not sure since which Intel procesor was second multi-byte NOP (0F0D)
-released. The reference sets it since Pentium Pro.
-
-0FAE /0 FXSAVE, 0FAE /1 FXRSTOR
-Current Intel manuals say that these were introduced with PIII
-processor. I can't find them documented in PIII manual though.
-Because of this problem, these instructions are marked as introduced
-with latter steppings of PIII processor.
-
-- Discussion:
-
-FF /3, FF /5:
-Should I add this comment?
-"The offset from the target operand is ignored when a call gate is used."
-
-LAR, LSL:
-Should I add this comment?
-"For all loads (regardless of source or destination sizing) only bits 16-0 are used. Other bits are ignored."
-
--->
-
-<x86reference version="1.12">
+<x86reference
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="x86reference.xsd">
 
   <one-byte>
 
@@ -4011,8 +3966,8 @@ Should I add this comment?
 	<note><brief>Store x87 FPU Environment</brief></note>
       </entry>
       <entry>
-	<opcd_ext>6</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>6</opcd_ext>
 	<!--<syntax mod="mem">-->
 	<syntax>
 	  <mnem>FSTENV</mnem><dst depend="no"><a>M</a><t>e</t></dst>
@@ -4146,8 +4101,8 @@ Should I add this comment?
 	<note><brief>Store x87 FPU Control Word</brief></note>
       </entry>
       <entry>
-	<opcd_ext>7</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>7</opcd_ext>
 	<!--<syntax mod="mem">-->
 	<syntax>
 	  <mnem>FSTCW</mnem><dst depend="no"><a>M</a><t>w</t></dst>
@@ -4559,8 +4514,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E0</sec_opcd>
 	<proc_start post="no">00</proc_start>
 	<proc_end>00</proc_end>
@@ -4597,8 +4552,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E1</sec_opcd>
 	<proc_start post="no">00</proc_start>
 	<proc_end>00</proc_end>
@@ -4635,8 +4590,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E2</sec_opcd>
 	<syntax>
 	  <mnem>FCLEX</mnem>
@@ -4660,8 +4615,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E3</sec_opcd>
 	<syntax>
 	  <mnem>FINIT</mnem>
@@ -4685,8 +4640,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E4</sec_opcd>
 	<proc_start post="no">02</proc_start>
 	<proc_end>02</proc_end>
@@ -5190,8 +5145,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="mem">-->
       <entry>
-	<opcd_ext>6</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>6</opcd_ext>
 	<syntax>
 	  <mnem>FSAVE</mnem>
           <dst><a>M</a><t>st</t></dst>
@@ -5224,8 +5179,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="mem">-->
       <entry>
-	<opcd_ext>7</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>7</opcd_ext>
 	<syntax>
 	  <mnem>FSTSW</mnem><dst><a>M</a><t>w</t></dst>
 	</syntax>
@@ -5711,8 +5666,8 @@ Should I add this comment?
       </entry>
       <!--<entry mod="nomem">-->
       <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
 	<pref>9B</pref>
+	<opcd_ext>4</opcd_ext>
 	<sec_opcd>E0</sec_opcd>
 	<proc_start>02</proc_start>
 	<syntax>
@@ -11718,8 +11673,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Right Logical</brief></note>
       </entry>
       <entry>
-        <opcd_ext>2</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>2</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSRLW</mnem>
@@ -11744,8 +11699,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Right Arithmetic</brief></note>
       </entry>
       <entry>
-        <opcd_ext>4</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>4</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSRAW</mnem>
@@ -11770,8 +11725,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Left Logical</brief></note>
       </entry>
       <entry> 
-        <opcd_ext>6</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>6</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSLLW</mnem>
@@ -11798,8 +11753,8 @@ Should I add this comment?
         <note><brief>Shift Double Quadword Right Logical</brief></note>
       </entry>
       <entry>
-        <opcd_ext>2</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>2</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSRLD</mnem>
@@ -11824,8 +11779,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Right Arithmetic</brief></note>
       </entry>
       <entry>
-        <opcd_ext>4</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>4</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSRAD</mnem>
@@ -11850,8 +11805,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Left Logical</brief></note>
       </entry>
       <entry>
-        <opcd_ext>6</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>6</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSLLD</mnem>
@@ -11878,8 +11833,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Right Logical</brief></note>
       </entry>
       <entry>
-        <opcd_ext>2</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>2</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSRLQ</mnem>
@@ -11893,8 +11848,8 @@ Should I add this comment?
 
       <!--<entry mod="nomem">-->
       <entry>
-        <opcd_ext>3</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>3</opcd_ext>
 	<proc_start>10</proc_start>
 	<syntax>
 	  <mnem>PSRLDQ</mnem>
@@ -11920,8 +11875,8 @@ Should I add this comment?
         <note><brief>Shift Packed Data Left Logical</brief></note>
       </entry>
       <entry>
-        <opcd_ext>6</opcd_ext>
 	<pref>66</pref>
+        <opcd_ext>6</opcd_ext>
         <proc_start>10</proc_start>
         <syntax>
           <mnem>PSLLQ</mnem>
@@ -11935,8 +11890,8 @@ Should I add this comment?
 
       <!--<entry mod="nomem">-->
       <entry>
-        <opcd_ext>7</opcd_ext> 
 	<pref>66</pref>   
+        <opcd_ext>7</opcd_ext> 
 	<proc_start>10</proc_start>   
 	<syntax>
 	  <mnem>PSLLDQ</mnem>

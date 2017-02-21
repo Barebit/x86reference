@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- The reference uses XML Schema now, DTD is here only for backward compatibility -->
+
 <!-- Visit http://ref.x86asm.net -->
 
 <!-- revision 1.11 -->

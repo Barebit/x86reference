@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="x86reference">
+		<xs:complexType>
+			<xs:sequence minOccurs="1">
+				<xs:element name="one-byte" minOccurs="1" maxOccurs="1" type="opcodeType"/>
+				<xs:element name="two-byte" minOccurs="1" maxOccurs="1" type="opcodeType"/>
+				<xs:element name="gen_notes" minOccurs="1" maxOccurs="1" type="gennotesType"/>
+				<xs:element name="ring_notes" minOccurs="1" maxOccurs="1" type="ringnotesType"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="nonEmptyString" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="gennotesType">
+		<xs:sequence>
+			<xs:element name="gen_note" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="id" type="nonEmptyString" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ringnotesType">
+		<xs:sequence>
+			<xs:element name="ring_note" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="id" type="nonEmptyString" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="opcodeType">
+		<xs:sequence>
+			<xs:element name="pri_opcd" maxOccurs="unbounded" type="priopcdType"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="skip"/>
+	</xs:complexType>
+
+	<xs:complexType name="priopcdType">
+		<xs:sequence>
+			<xs:element name="proc_start" minOccurs="0" maxOccurs="1" type="xs:int"/>
+			<xs:element name="entry" minOccurs="1" maxOccurs="unbounded" type="entryType"/>
+		</xs:sequence>
+		<xs:attribute name="value" type="xs:hexBinary" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="entryType">
+		<xs:sequence>
+			<xs:element name="pref" minOccurs="0" maxOccurs="1" type="xs:hexBinary"/>
+			<xs:element name="opcd_ext" minOccurs="0" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:pattern value="[0-7]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sec_opcd" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:hexBinary">
+							<xs:attribute name="escape" use="optional" type="yes_no"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="proc_start" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:integer">
+							<xs:attribute name="post" use="optional" type="yes_no"/>
+							<xs:attribute name="lat_step" use="optional" type="yes_no"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="proc_end" minOccurs="0" maxOccurs="1" type="xs:int"/>
+			<xs:element name="syntax" minOccurs="1" maxOccurs="unbounded" type="syntaxType"/>
+			<xs:element name="instr_ext" minOccurs="0" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="sse1"/>
+						<xs:enumeration value="mmx"/>
+						<xs:enumeration value="sse2"/>
+						<xs:enumeration value="sse3"/>
+						<xs:enumeration value="ssse3"/>
+						<xs:enumeration value="vmx"/>
+						<xs:enumeration value="smx"/>
+						<xs:enumeration value="sse41"/>
+						<xs:enumeration value="sse42"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="grp1" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="grp2" minOccurs="0" maxOccurs="2" type="nonEmptyString"/>
+			<xs:element name="grp3" minOccurs="0" maxOccurs="2" type="nonEmptyString"/>
+			<xs:element name="test_f" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="modif_f" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="nonEmptyString">
+							<xs:attribute name="cond" use="optional" type="yes_no"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="def_f" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="nonEmptyString">
+							<xs:attribute name="cond" use="optional" type="nonEmptyString"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="undef_f" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="f_vals" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="modif_f_fpu" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="def_f_fpu" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="undef_f_fpu" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="f_vals_fpu" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="note" minOccurs="0" maxOccurs="1" type="skipme"/>
+		</xs:sequence>
+
+		<xs:attribute name="doc_part_alias_ref" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="part_alias" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="mod" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="mem"/>
+					<xs:enumeration value="nomem"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fpush" use="optional" type="yes_no"/>
+		<xs:attribute name="fpop" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="mem_format" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-1][0-1]"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="doc64_ref" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="alias" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="tttn" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-1][0-1][0-1][0-1]"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="sign-ext" use="optional" type="nonEmptyString" fixed="1"/>
+		<xs:attribute name="particular" use="optional" type="yes_no"/>
+		<xs:attribute name="doc" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="m"/>
+					<xs:enumeration value="u"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="doc_ref" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="is_doc" use="optional" type="yes_no"/>
+		<xs:attribute name="is_undoc" use="optional" type="yes_no"/>
+		<xs:attribute name="ring" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="f"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ring_ref" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="cr4_tsd"/>
+					<xs:enumeration value="cr4_pce"/>
+					<xs:enumeration value="rflags_iopl"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ref" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="mode" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="e"/>
+					<xs:enumeration value="p"/>
+					<xs:enumeration value="s"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="doc1632_ref" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="r" use="optional" type="yes_no"/>
+		<xs:attribute name="attr" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="serial"/>
+					<xs:enumeration value="invd"/>
+					<xs:enumeration value="acc"/>
+					<xs:enumeration value="delaysint"/>
+					<xs:enumeration value="undef"/>
+					<xs:enumeration value="null"/>
+					<xs:enumeration value="nop"/>
+					<xs:enumeration value="delaysint_cond"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="lock" use="optional" type="yes_no"/>
+		<xs:attribute name="direction" use="optional" type="OneOrZero"/>
+		<xs:attribute name="op_size" use="optional" type="OneOrZero"/>
+	</xs:complexType>
+
+	<xs:complexType name="skipme">
+		<xs:sequence>
+			<xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+		</xs:sequence>
+		<xs:anyAttribute processContents="skip"/>
+	</xs:complexType>
+
+	<xs:complexType name="syntaxType">
+		<xs:sequence minOccurs="0">
+			<xs:sequence minOccurs="1">
+				<xs:element name="mnem" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="nonEmptyString">
+								<xs:attribute name="sug" use="optional" type="yes_no"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="36">
+				<xs:element name="src" minOccurs="0" maxOccurs="1" type="operandType"/>
+				<xs:element name="dst" minOccurs="0" maxOccurs="1" type="operandType"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="mod" use="optional" type="nonEmptyString"/>
+	</xs:complexType>
+
+	<xs:complexType name="operandType" mixed="true">
+		<xs:all>
+			<xs:element name="a" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+			<xs:element name="t" minOccurs="0" maxOccurs="1" type="nonEmptyString"/>
+		</xs:all>
+		<xs:attribute name="nr" use="optional">
+			<xs:simpleType>
+				<xs:union>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:maxInclusive value="15"/>
+						</xs:restriction>
+					</xs:simpleType>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:minInclusive value="172"/>
+							<xs:maxInclusive value="176"/>
+						</xs:restriction>
+					</xs:simpleType>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="C0000102"/>
+							<xs:enumeration value="C0000103"/>
+							<xs:enumeration value="C0000084"/>
+							<xs:enumeration value="C0000082"/>
+							<xs:enumeration value="C0000081"/>
+							<xs:enumeration value="8B"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:union>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="group" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="gen"/>
+					<xs:enumeration value="x87fpu"/>
+					<xs:enumeration value="seg"/>
+					<xs:enumeration value="systabp"/>
+					<xs:enumeration value="ctrl"/>
+					<xs:enumeration value="msr"/>
+					<xs:enumeration value="xmm"/>
+					<xs:enumeration value="mmx"/>
+					<xs:enumeration value="debug"/>
+					<xs:enumeration value="xcr"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type" use="optional" type="nonEmptyString"/>
+		<xs:attribute name="depend" use="optional" type="yes_no"/>
+		<xs:attribute name="address" use="optional" type="AddressType"/>
+		<xs:attribute name="displayed" use="optional" type="yes_no"/>
+	</xs:complexType>
+
+	<xs:simpleType name="AddressType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BA"/>
+			<xs:enumeration value="BB"/>
+			<xs:enumeration value="BD"/>
+			<xs:enumeration value="X"/>
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="SC"/>
+			<xs:enumeration value="S2"/>
+			<xs:enumeration value="S30"/>
+			<xs:enumeration value="S33"/>
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="I"/>
+			<xs:enumeration value="EST"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="nonEmptyString">
+		<xs:annotation>
+			<xs:documentation>
+				Doesn't allow empty strings OR trailing OR preceding whitespace
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\S+((.|\n)*\S+)*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OneOrZero">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="yes_no">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
