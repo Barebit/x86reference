@@ -9892,6 +9892,7 @@
 	  <mnem>PALIGNR</mnem>
 	  <dst><a>P</a><t>q</t></dst>
 	  <src><a>Q</a><t>q</t></src>
+	  <src><a>I</a><t>b</t></src>
 	</syntax>
         <instr_ext>ssse3</instr_ext>  
 	<grp1>simdint</grp1>
@@ -9905,6 +9906,7 @@
 	  <mnem>PALIGNR</mnem>
 	  <dst><a>V</a><t>dq</t></dst>
 	  <src><a>W</a><t>dq</t></src>
+	  <src><a>I</a><t>b</t></src>
 	</syntax>
         <instr_ext>ssse3</instr_ext>  
 	<grp1>simdint</grp1>
