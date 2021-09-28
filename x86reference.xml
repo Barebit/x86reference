@@ -3424,19 +3424,8 @@
 
     <pri_opcd value="D4">
       <entry>
-	<sec_opcd>0A</sec_opcd>
 	<syntax>
-	  <mnem>AAM</mnem>
-	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
-	  <dst nr="4" group="gen" type="b" displayed="no" depend="no">AH</dst>
-	</syntax>
-	<grp1>gen</grp1><grp2>arith</grp2><grp3>decimal</grp3>
-	<modif_f>oszapc</modif_f><def_f>szp</def_f><undef_f>oac</undef_f>
-	<note><brief>ASCII Adjust AX After Multiply</brief></note>
-      </entry>
-      <entry>
-	<syntax>
-	  <mnem sug="yes">AMX</mnem>
+	  <mnem sug="yes">AAM</mnem>
 	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
 	  <dst nr="4" group="gen" type="b" displayed="no" depend="no">AH</dst>
 	  <src><a>I</a><t>b</t></src>
@@ -3454,19 +3443,8 @@
 
     <pri_opcd value="D5">
       <entry>
-	<sec_opcd>0A</sec_opcd>
 	<syntax>
-	  <mnem>AAD</mnem>
-	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
-	  <dst nr="4" group="gen" type="b" displayed="no">AH</dst>
-	</syntax>
-	<grp1>gen</grp1><grp2>arith</grp2><grp3>decimal</grp3>
-	<modif_f>oszapc</modif_f><def_f>szp</def_f><undef_f>oac</undef_f>
-	<note><brief>ASCII Adjust AX Before Division</brief></note>
-      </entry>
-      <entry>
-	<syntax>
-	  <mnem sug="yes">ADX</mnem>
+	  <mnem sug="yes">AAD</mnem>
 	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
 	  <dst nr="4" group="gen" type="b" displayed="no">AH</dst>
 	  <src><a>I</a><t>b</t></src>
@@ -3564,56 +3542,46 @@
 
       <entry mem_format="00">
 	<opcd_ext>2</opcd_ext>
-	<syntax>
+	<syntax mod="mem">
 	  <mnem>FCOM</mnem>
           <src nr="0" group="x87fpu" displayed="no">ST</src>
           <src><a>ES</a><t>sr</t></src>
 	</syntax>
-	<grp1>x87fpu</grp1><grp2>compar</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>0123</def_f_fpu>
-	<note><brief>Compare Real</brief></note>
-      </entry>
-      <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>2</opcd_ext>
-	<sec_opcd>D1</sec_opcd>
-	<!--<syntax mod="nomem">-->
-	<syntax>
+	<syntax mod="nomem">
 	  <mnem>FCOM</mnem>
           <src nr="0" group="x87fpu" displayed="no">ST</src>
-          <src nr="1" group="x87fpu" address="EST" displayed="no">ST1</src>
+          <src>
+			<a>EST</a>
+		  </src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>compar</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
 	<def_f_fpu>0123</def_f_fpu>
 	<note><brief>Compare Real</brief></note>
       </entry>
-
+      <entry>
       <entry mem_format="00" fpop="once">
 	<opcd_ext>3</opcd_ext>
-	<syntax>
-	  <mnem>FCOMP</mnem><src nr="0" group="x87fpu" displayed="no">ST</src><src><a>ES</a><t>sr</t></src>
+	<syntax mod="mem">
+	  <mnem>FCOMP</mnem>
+	  <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <src>
+		<a>ES</a>
+		<t>sr</t>
+	  </src>
 	</syntax>
-	<grp1>x87fpu</grp1><grp2>compar</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>0123</def_f_fpu>
-	<note><brief>Compare Real and Pop</brief></note>
-      </entry>
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>3</opcd_ext>
-	<sec_opcd>D9</sec_opcd>
-	<!--<syntax mod="nomem">-->
 	<syntax>
 	  <mnem>FCOMP</mnem>
           <src nr="0" group="x87fpu" displayed="no">ST</src>
-          <src nr="1" group="x87fpu" address="EST" displayed="no">ST1</src>
+		  <src>
+			<a>EST</a>
+		  </src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>compar</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
 	<def_f_fpu>0123</def_f_fpu>
 	<note><brief>Compare Real and Pop</brief></note>
       </entry>
-
       <entry mem_format="00">
 	<opcd_ext>4</opcd_ext>
 	<syntax mod="mem">
@@ -3693,24 +3661,12 @@
 
       <entry mem_format="00">
 	<opcd_ext>1</opcd_ext>
-	<!--<syntax mod="mem">-->
-	<syntax>
-	  <mnem>FXCH</mnem><dst nr="0" group="x87fpu" displayed="no">ST</dst><dst><a>EST</a></dst>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>datamov</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Exchange Register Contents</brief></note>
-      </entry>
-      <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>1</opcd_ext>
-	<sec_opcd>C9</sec_opcd>
-	<!--<syntax mod="nomem">-->
-	<syntax>
+	<syntax mod="nomem">
 	  <mnem>FXCH</mnem>
-          <dst nr="0" group="x87fpu" displayed="no">ST</dst>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
+	  <dst nr="0" group="x87fpu" displayed="no">ST</dst>
+	  <dst>
+		<a>EST</a>
+	  </dst>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>datamov</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -3718,7 +3674,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Exchange Register Contents</brief></note>
       </entry>
-
       <entry mem_format="00">
 	<opcd_ext>2</opcd_ext>
 	<!--<syntax mod="mem">-->
@@ -5071,57 +5026,32 @@
 	<opcd_ext>4</opcd_ext>
 	<proc_start>03</proc_start>
 	<syntax>
-	  <mnem>FUCOM</mnem><src nr="0" group="x87fpu" displayed="no">ST</src><src><a>EST</a></src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>compar</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>0123</def_f_fpu>
-	<note><brief>Unordered Compare Floating Point Values</brief></note>
-      </entry>
-      <!--<entry mod="nomem">-->
-      <entry>   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
-	<sec_opcd>E1</sec_opcd>
-	<proc_start>03</proc_start>
-	<syntax>
 	  <mnem>FUCOM</mnem>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
-          <src nr="1" group="x87fpu" address="EST" displayed="no">ST1</src>
+	  <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <src>
+		<a>EST</a>
+	  </src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>compar</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
 	<def_f_fpu>0123</def_f_fpu>
 	<note><brief>Unordered Compare Floating Point Values</brief></note>
       </entry>
-
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">
+      <entry mod="nomem" fpop="once">
 	<opcd_ext>5</opcd_ext>
-	<proc_start>03</proc_start>
-	<syntax>
-	  <mnem>FUCOMP</mnem><src nr="0" group="x87fpu" displayed="no">ST</src><src><a>EST</a></src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>compar</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>0123</def_f_fpu>
-	<note><brief>Unordered Compare Floating Point Values and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>5</opcd_ext>
-	<sec_opcd>E9</sec_opcd>
 	<proc_start>03</proc_start>
 	<syntax>
 	  <mnem>FUCOMP</mnem>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
-          <src nr="1" group="x87fpu" address="EST" displayed="no">ST1</src>
+	  <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <src>
+		<a>EST</a>
+	  </src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>compar</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
 	<def_f_fpu>0123</def_f_fpu>
 	<note><brief>Unordered Compare Floating Point Values and Pop</brief></note>
       </entry>
-
       <!--<entry mod="mem">-->
       <entry>
 	<opcd_ext>6</opcd_ext>
@@ -5216,22 +5146,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Add and Pop</brief></note>
       </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>0</opcd_ext>
-	<sec_opcd>C1</sec_opcd>
-	<syntax>
-	  <mnem>FADDP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Add and Pop</brief></note>
-      </entry>
-
       <entry mem_format="11" mod="mem">
 	<opcd_ext>1</opcd_ext>
 	<syntax>
@@ -5246,22 +5160,11 @@
       <entry mod="nomem" fpop="once">
 	<opcd_ext>1</opcd_ext>
 	<syntax>
-	  <mnem>FMULP</mnem><dst><a>EST</a></dst><src nr="0" group="x87fpu">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Multiply and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>1</opcd_ext>
-	<sec_opcd>C9</sec_opcd>
-	<syntax>
 	  <mnem>FMULP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <dst>
+		<a>EST</a>
+	  </dst>
+	  <src nr="0" group="x87fpu">ST</src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>arith</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -5269,7 +5172,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Multiply and Pop</brief></note>
       </entry>
-
       <entry mem_format="11" mod="mem">
 	<opcd_ext>2</opcd_ext>
 	<syntax>
@@ -5348,22 +5250,11 @@
       <entry mod="nomem" fpop="once">
 	<opcd_ext>4</opcd_ext>
 	<syntax>
-	  <mnem>FSUBRP</mnem><dst><a>EST</a></dst><src nr="0" group="x87fpu">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Reverse Subtract and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>4</opcd_ext>
-	<sec_opcd>E1</sec_opcd>
-	<syntax>
 	  <mnem>FSUBRP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <dst>
+		<a>EST</a>
+	  </dst>
+	  <src nr="0" group="x87fpu">ST</src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>arith</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -5371,7 +5262,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Reverse Subtract and Pop</brief></note>
       </entry>
-
       <entry mem_format="11" mod="mem">
 	<opcd_ext>5</opcd_ext>
 	<syntax>
@@ -5386,22 +5276,11 @@
       <entry mod="nomem" fpop="once">
 	<opcd_ext>5</opcd_ext>
 	<syntax>
-	  <mnem>FSUBP</mnem><dst><a>EST</a></dst><src nr="0" group="x87fpu">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Subtract and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>5</opcd_ext>
-	<sec_opcd>E9</sec_opcd>
-	<syntax>
 	  <mnem>FSUBP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <dst>
+		<a>EST</a>
+	  </dst>
+	  <src nr="0" group="x87fpu">ST</src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>arith</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -5409,7 +5288,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Subtract and Pop</brief></note>
       </entry>
-
       <entry mem_format="11" mod="mem">
 	<opcd_ext>6</opcd_ext>
 	<syntax>
@@ -5424,22 +5302,11 @@
       <entry mod="nomem" fpop="once">
 	<opcd_ext>6</opcd_ext>
 	<syntax>
-	  <mnem>FDIVRP</mnem><dst><a>EST</a></dst><src nr="0" group="x87fpu">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Reverse Divide and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>6</opcd_ext>
-	<sec_opcd>F1</sec_opcd>
-	<syntax>
 	  <mnem>FDIVRP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <dst>
+		<a>EST</a>
+	  </dst>
+	  <src nr="0" group="x87fpu">ST</src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>arith</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -5447,7 +5314,6 @@
 	<undef_f_fpu>023</undef_f_fpu>
 	<note><brief>Reverse Divide and Pop</brief></note>
       </entry>
-
       <entry mem_format="11" mod="mem">
 	<opcd_ext>7</opcd_ext>
 	<syntax>
@@ -5462,22 +5328,11 @@
       <entry mod="nomem" fpop="once">
 	<opcd_ext>7</opcd_ext>
 	<syntax>
-	  <mnem>FDIVP</mnem><dst><a>EST</a></dst><src nr="0" group="x87fpu">ST</src>
-	</syntax>
-	<grp1>x87fpu</grp1><grp2>arith</grp2>
-	<modif_f_fpu>0123</modif_f_fpu>
-	<def_f_fpu>1</def_f_fpu>
-	<undef_f_fpu>023</undef_f_fpu>
-	<note><brief>Divide and Pop</brief></note>
-      </entry>
-      <!--<entry mod="nomem" fpop="once">-->
-      <entry fpop="once">   <!-- @mod=nomem not needed, because sec_opcd must be matched -->
-	<opcd_ext>7</opcd_ext>
-	<sec_opcd>F9</sec_opcd>
-	<syntax>
 	  <mnem>FDIVP</mnem>
-          <dst nr="1" group="x87fpu" address="EST" displayed="no">ST1</dst>
-          <src nr="0" group="x87fpu" displayed="no">ST</src>
+	  <dst>
+		<a>EST</a>
+	  </dst>
+	  <src nr="0" group="x87fpu">ST</src>
 	</syntax>
 	<grp1>x87fpu</grp1><grp2>arith</grp2>
 	<modif_f_fpu>0123</modif_f_fpu>
@@ -7932,8 +7787,8 @@
           <mnem>MOV</mnem>
           <!-- 1.02 <dst depend="no"><a>D</a><t>dqp</t></dst>-->
           <!-- 1.02 <src><a>H</a><t>dqp</t></src>-->
-          <dst depend="no"><a>D</a><t>q</t></dst>
-          <src><a>H</a><t>q</t></src>
+          <dst depend="no"><a>D</a><t>d</t></dst>
+          <src><a>H</a><t>d</t></src>
         </syntax>
 	<grp1>system</grp1>
 	<modif_f>oszapc</modif_f><undef_f>oszapc</undef_f>
