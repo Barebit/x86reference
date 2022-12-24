@@ -6940,7 +6940,7 @@
 	<syntax>
 	  <mnem>MOVSD</mnem>
 	  <dst depend="no"><a>V</a><t>sd</t></dst>   
-	  <src><a>W</a><t>sd</t></src>   
+	  <src><a>W</a><t>q</t></src>   
 	</syntax>
         <instr_ext>sse2</instr_ext>  
 	<grp1>pcksclr</grp1>
@@ -6996,7 +6996,7 @@
 	<proc_start>10</proc_start>   
 	<syntax>
 	  <mnem>MOVSD</mnem>
-	  <dst depend="no"><a>W</a><t>sd</t></dst>   
+	  <dst depend="no"><a>W</a><t>q</t></dst>   
 	  <src><a>V</a><t>sd</t></src>   
 	</syntax>
         <instr_ext>sse2</instr_ext>  
