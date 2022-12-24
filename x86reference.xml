@@ -8159,7 +8159,7 @@
 	<syntax>
 	  <mnem>UCOMISD</mnem>
 	  <src><a>V</a><t>sd</t></src>   
-	  <src><a>W</a><t>sd</t></src>   
+	  <src><a>W</a><t>q</t></src>   
 	</syntax>
         <instr_ext>sse2</instr_ext>  
 	<grp1>pcksclr</grp1>
