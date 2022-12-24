@@ -8047,7 +8047,7 @@
 	<syntax>
 	  <mnem>CVTTSS2SI</mnem>
 	  <dst><a>G</a><t>dqp</t></dst>   
-	  <src><a>W</a><t>ss</t></src>   
+	  <src><a>W</a><t>d</t></src>   
 	</syntax>
         <instr_ext>sse1</instr_ext>
 	<grp1>conver</grp1>
