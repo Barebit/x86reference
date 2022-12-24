@@ -7068,8 +7068,8 @@
 	<proc_start lat_step="yes">10</proc_start>   
 	<syntax>
 	  <mnem>MOVSLDUP</mnem>
-	  <dst depend="no"><a>V</a><t>q</t></dst>   
-	  <src><a>W</a><t>q</t></src>   
+	  <dst depend="no"><a>V</a><t>ps</t></dst>   
+	  <src><a>W</a><t>ps</t></src>   
 	</syntax>
         <instr_ext>sse3</instr_ext>  
 	<grp1>simdfp</grp1>
