@@ -9822,29 +9822,48 @@
 
       <!-- 0F3A 16 -->
 
-      <entry r="yes" doc_ref="gen_note_SSE4_amd">
-	<pref>66</pref>
-	<sec_opcd escape="yes">16</sec_opcd>
-	<proc_start lat_step="yes">12</proc_start>
-	<syntax>
-	  <mnem>PEXTRD</mnem>
-	  <dst><a>E</a><t>d</t></dst>   <!-- note: "do" type can't be used here -->
-	  <src><a>V</a><t>dq</t></src>
-          <src><a>I</a><t>b</t></src>
-	</syntax>
-	<syntax>
-	  <mnem>PEXTRQ</mnem>
-	  <dst><a>E</a><t>qp</t></dst>
-	  <src><a>V</a><t>dq</t></src>
-          <src><a>I</a><t>b</t></src>
-	</syntax>
-	<instr_ext>sse41</instr_ext>
-	<grp1>simdint</grp1>
-	<grp2>datamov</grp2>
-	<note>
-	  <brief>Extract Dword/Qword</brief>
-	</note>
-      </entry>
+	  <entry r="yes" doc_ref="gen_note_SSE4_amd">
+	  <pref>66</pref>
+	  <sec_opcd escape="yes">16</sec_opcd>
+	  <proc_start lat_step="yes">12</proc_start>
+	  <syntax>
+	    <mnem>PEXTRD</mnem>
+	    <dst><a>E</a><t>d</t></dst>   <!-- note: "do" type can't be used here -->
+	    <src><a>V</a><t>dq</t></src>
+            <src><a>I</a><t>b</t></src>
+	  </syntax>
+	  <instr_ext>sse41</instr_ext>
+	  <grp1>simdint</grp1>
+	  <grp2>datamov</grp2>
+	  <note>
+	    <brief>Extract Dword/Qword</brief>
+	  </note>
+    </entry>
+
+    <entry r="yes" doc_ref="gen_note_SSE4_amd"
+	mode="e">
+	  <pref>66</pref>
+	  <sec_opcd escape="yes">16</sec_opcd>
+	  <proc_start lat_step="yes">12</proc_start>
+	  <syntax>
+	    <mnem>PEXTRD</mnem>
+	    <dst><a>E</a><t>d</t></dst>   <!-- note: "do" type can't be used here -->
+	    <src><a>V</a><t>dq</t></src>
+            <src><a>I</a><t>b</t></src>
+	  </syntax>
+	  <syntax>
+	    <mnem>PEXTRQ</mnem>
+	    <dst><a>E</a><t>qp</t></dst>
+	    <src><a>V</a><t>dq</t></src>
+            <src><a>I</a><t>b</t></src>
+	  </syntax>
+	  <instr_ext>sse41</instr_ext>
+	  <grp1>simdint</grp1>
+	  <grp2>datamov</grp2>
+	  <note>
+	    <brief>Extract Dword/Qword</brief>
+	  </note>
+    </entry>
 
       <!-- 0F3A 17 -->
 
