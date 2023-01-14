@@ -9651,7 +9651,7 @@
 	<syntax>
 	  <mnem>ROUNDSS</mnem>
 	  <dst depend="no"><a>V</a><t>ss</t></dst>
-	  <src><a>W</a><t>ss</t></src>
+	  <src><a>W</a><t>d</t></src>
           <src><a>I</a><t>b</t></src>
 	</syntax>
         <instr_ext>sse41</instr_ext>  
