@@ -10435,7 +10435,7 @@
 	<syntax>
 	  <mnem>RSQRTSS</mnem>
 	  <dst><a>V</a><t>ss</t></dst>   
-	  <src><a>W</a><t>ss</t></src>   
+	  <src><a>W</a><t>d</t></src>   
 	</syntax>
         <instr_ext>sse1</instr_ext>
 	<grp1>simdfp</grp1>
