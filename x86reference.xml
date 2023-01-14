@@ -9944,27 +9944,44 @@
 
       <!-- 0F3A 22 -->
 
-      <entry r="yes" doc_ref="gen_note_SSE4_amd">
-        <pref>66</pref>
-        <sec_opcd escape="yes">22</sec_opcd>
-        <proc_start lat_step="yes">12</proc_start>
-	<syntax>
-	  <mnem>PINSRD</mnem>
-	  <dst><a>V</a><t>dq</t></dst>   
-	  <src><a>E</a><t>d</t></src>   
-	  <src><a>I</a><t>b</t></src>   
-	</syntax>
-	<syntax>
-	  <mnem>PINSRQ</mnem>
-	  <dst><a>V</a><t>dq</t></dst>   
-	  <src><a>E</a><t>qp</t></src>   <!-- effective type is 'b' -->
-	  <src><a>I</a><t>b</t></src>   
-	</syntax>
-        <instr_ext>sse41</instr_ext>
-	<grp1>simdint</grp1>
-        <grp2>datamov</grp2>
-	<note><brief>Insert Dword/Qword</brief></note>
-      </entry>
+	<entry r="yes" doc_ref="gen_note_SSE4_amd">
+      <pref>66</pref>
+      <sec_opcd escape="yes">22</sec_opcd>
+      <proc_start lat_step="yes">12</proc_start>
+	  <syntax>
+	    <mnem>PINSRD</mnem>
+	    <dst><a>V</a><t>dq</t></dst>   
+	    <src><a>E</a><t>d</t></src>   
+	    <src><a>I</a><t>b</t></src>   
+	  </syntax>
+          <instr_ext>sse41</instr_ext>
+	  <grp1>simdint</grp1>
+          <grp2>datamov</grp2>
+	  <note><brief>Insert Dword/Qword</brief></note>
+    </entry>
+
+    <entry r="yes" doc_ref="gen_note_SSE4_amd"
+	mode="e">
+      <pref>66</pref>
+      <sec_opcd escape="yes">22</sec_opcd>
+      <proc_start lat_step="yes">12</proc_start>
+	  <syntax>
+	    <mnem>PINSRD</mnem>
+	    <dst><a>V</a><t>dq</t></dst>   
+	    <src><a>E</a><t>d</t></src>   
+	    <src><a>I</a><t>b</t></src>   
+	  </syntax>
+	  <syntax>
+	    <mnem>PINSRQ</mnem>
+	    <dst><a>V</a><t>dq</t></dst>   
+	    <src><a>E</a><t>qp</t></src>   <!-- effective type is 'b' -->
+	    <src><a>I</a><t>b</t></src>   
+	  </syntax>
+          <instr_ext>sse41</instr_ext>
+	  <grp1>simdint</grp1>
+          <grp2>datamov</grp2>
+	  <note><brief>Insert Dword/Qword</brief></note>
+    </entry>
 
       <!-- 0F3A 40 -->
 
