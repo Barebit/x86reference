@@ -5849,7 +5849,7 @@
 
     <pri_opcd value="EB">
       <entry>
-	<syntax><mnem>JMP</mnem><src><a>J</a><t>bs</t></src></syntax>
+	<syntax><mnem>JMP</mnem><src><a>J</a><t>bss</t></src></syntax>
 	<grp1>gen</grp1><grp2>branch</grp2>
 	<note><brief>Jump</brief></note>
       </entry>
