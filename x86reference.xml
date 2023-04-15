@@ -5704,12 +5704,12 @@
       <entry>
 	<syntax>
           <mnem>JCXZ</mnem>
-          <src><a>J</a><t>bs</t></src>
+          <src><a>J</a><t>bss</t></src>
 	  <src nr="1" group="gen" type="wa" displayed="no">CX</src>
         </syntax>
 	<syntax>
           <mnem>JECXZ</mnem>
-          <src><a>J</a><t>bs</t></src>
+          <src><a>J</a><t>bss</t></src>
 	  <src nr="1" group="gen" type="da" displayed="no">ECX</src>
         </syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
@@ -5719,12 +5719,12 @@
 	<proc_start>10</proc_start>
 	<syntax>
           <mnem>JECXZ</mnem>
-          <src><a>J</a><t>bs</t></src>
+          <src><a>J</a><t>bss</t></src>
 	  <src nr="1" group="gen" type="da" displayed="no">ECX</src>
         </syntax>
 	<syntax>
           <mnem>JRCXZ</mnem>
-          <src><a>J</a><t>bs</t></src>
+          <src><a>J</a><t>bss</t></src>
 	  <src nr="1" group="gen" type="qa" displayed="no">RCX</src>
         </syntax>
 	<grp1>gen</grp1><grp2>branch</grp2><grp3>cond</grp3>
