@@ -3132,6 +3132,11 @@
         <f_vals>i</f_vals>
 	<note><brief>Call to Interrupt Procedure</brief></note>
       </entry>
+	  <entry attr="invd" mode="e">
+	<proc_start>10</proc_start>
+	<syntax/>
+	<note><brief>Invalid Instruction in 64-Bit Mode</brief></note>
+      </entry>
     </pri_opcd>
 
     <pri_opcd value="CF">
