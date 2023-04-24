@@ -14000,7 +14000,7 @@
       <syntax>
         <mnem>PAND</mnem>
         <dst><a>P</a><t>q</t></dst>
-        <src><a>Q</a><t>d</t></src>
+        <src><a>Q</a><t>q</t></src>
       </syntax>
       <instr_ext>mmx</instr_ext>
       <grp1>logical</grp1>
