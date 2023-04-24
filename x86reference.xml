@@ -14326,7 +14326,7 @@
 	<syntax>
 	  <mnem>CVTDQ2PD</mnem>
 	  <dst><a>V</a><t>pd</t></dst>   
-	  <src><a>W</a><t>dq</t></src>   
+	  <src><a>W</a><t>q</t></src>   
 	</syntax>
         <instr_ext>sse2</instr_ext>  
 	<grp1>pcksclr</grp1>
