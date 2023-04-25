@@ -13105,6 +13105,18 @@
 	<grp1>cachect</grp1>
 	<note><brief>Flush Cache Line</brief></note>
       </entry>
+	  <entry mod="mem"> 
+	  	<pref>66</pref>
+        <opcd_ext>7</opcd_ext> 
+	<proc_start>13</proc_start>   
+	<syntax>
+	  <mnem>CLFLUSHOPT</mnem>
+	  <src depend="no"><a>M</a><t>b</t></src>   
+	</syntax>
+        <instr_ext>sse2</instr_ext>  
+	<grp1>cachect</grp1>
+	<note><brief>Flush Cache Line</brief></note>
+      </entry>
     </pri_opcd>
 
     <pri_opcd value="AF">
