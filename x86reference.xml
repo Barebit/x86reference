@@ -13240,12 +13240,12 @@
 
     <pri_opcd value="B9">
       <entry r="yes" attr="invd" doc="m"
-        doc_ref="gen_note_sug_UD_0FB9">   <!-- r=yes fixed in 1.02 -->
+        doc_ref="gen_note_sug_UD1_0FB9">   <!-- r=yes fixed in 1.02 -->
         <proc_start>02</proc_start>
 	<syntax>
-          <mnem sug="yes">UD</mnem>
-          <src depend="no"><a>G</a></src>
-          <src depend="no"><a>E</a></src>
+          <mnem sug="yes">UD1</mnem>
+          <src depend="no"><a>G</a><t>v</t></src>
+          <src depend="no"><a>E</a><t>v</t></src>
         </syntax>
 	<grp1>gen</grp1><grp2>control</grp2>
 	<note><brief>Undefined Instruction</brief></note>
@@ -15017,7 +15017,7 @@
     <gen_note id="gen_note_SETcc_0F90-0F9F"/>
     <gen_note id="gen_note_CMPXCHG_0FB0_0FB1"/>
     <gen_note id="gen_note_LSS_0FB2_LFS_0FB4_LGS_0FB5"/>
-    <gen_note id="gen_note_sug_UD_0FB9"/>
+    <gen_note id="gen_note_sug_UD1_0FB9"/>
     <gen_note id="gen_note_BSF_0FBC_BSR_0FBD"/>
     <gen_note id="gen_note_CMPXCHG8B_CMPXCHG16B_0FC7_1"/>
     <gen_note id="gen_note_BSWAP_0FC8"/>
