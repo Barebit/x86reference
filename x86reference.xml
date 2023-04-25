@@ -1892,10 +1892,29 @@
 
     <pri_opcd value="8E">
       <entry direction="1" r="yes">
-        <syntax>
+        <syntax mod="mem">
           <mnem>MOV</mnem>
           <dst depend="no"><a>S</a><t>w</t></dst>
           <src><a>E</a><t>w</t></src>
+        </syntax>
+		<syntax mod="nomem">
+          <mnem>MOV</mnem>
+          <dst depend="no"><a>S</a><t>w</t></dst>
+          <src><a>E</a><t>v</t></src>
+        </syntax>
+        <grp1>gen</grp1><grp2>datamov</grp2>
+        <note><brief>Move</brief></note>
+      </entry>
+	  <entry direction="1" r="yes" mode="e">
+        <syntax mod="mem">
+          <mnem>MOV</mnem>
+          <dst depend="no"><a>S</a><t>w</t></dst>
+          <src><a>E</a><t>w</t></src>
+        </syntax>
+		<syntax mod="nomem">
+          <mnem>MOV</mnem>
+          <dst depend="no"><a>S</a><t>w</t></dst>
+          <src><a>E</a><t>vqp</t></src>
         </syntax>
         <grp1>gen</grp1><grp2>datamov</grp2>
         <note><brief>Move</brief></note>
