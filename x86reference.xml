@@ -12974,20 +12974,20 @@
 	</note>
       </entry>
 
-      <entry mod="nomem">
+      <entry>
         <opcd_ext>5</opcd_ext>
 	<proc_start>10</proc_start>   
-	<syntax>
+	<syntax mod="nomem">
 	  <mnem>LFENCE</mnem>
 	</syntax>
         <instr_ext>sse2</instr_ext>  
 	<grp1>order</grp1>
 	<note><brief>Load Fence</brief></note>
       </entry>
-      <entry mod="mem">
+      <entry>
         <opcd_ext>5</opcd_ext>  
         <proc_start lat_step="yes">12</proc_start>   
-	<syntax>
+	<syntax mod="mem">
           <!-- for now, XRSTOR supports only those registers supported by FXRSTOR -->
 	  <mnem>XRSTOR</mnem>
 	  <dst nr="0" group="x87fpu" depend="no" displayed="no">ST</dst>
@@ -13024,10 +13024,10 @@
 	  <det>Restore processor extended states from memory. The states are specified by EDX:EAX</det>
 	</note>
       </entry>
-      <entry mod="mem" mode="e">
+      <entry mode="e">
         <opcd_ext>5</opcd_ext>  
         <proc_start lat_step="yes">12</proc_start>   
-	<syntax>
+	<syntax mod="mem">
           <!-- for now, XRSTOR supports only those registers supported by FXRSTOR -->
 	  <mnem>XRSTOR</mnem>
 	  <dst nr="0" group="x87fpu" depend="no" displayed="no">ST</dst>
@@ -13076,7 +13076,7 @@
       <entry>
         <opcd_ext>6</opcd_ext>
 	<proc_start>10</proc_start>   
-	<syntax>
+	<syntax mod="nomem">
 	  <mnem>MFENCE</mnem>
 	</syntax>
         <instr_ext>sse2</instr_ext>  
@@ -13084,20 +13084,20 @@
 	<note><brief>Memory Fence</brief></note>
       </entry>
 
-      <entry mod="nomem">
+      <entry>
         <opcd_ext>7</opcd_ext>  
         <proc_start>09</proc_start>   
-	<syntax>
+	<syntax mod="nomem">
 	  <mnem>SFENCE</mnem>
 	</syntax>
         <instr_ext>sse1</instr_ext>
 	<grp1>order</grp1>
 	<note><brief>Store Fence</brief></note>
       </entry>
-      <entry mod="mem"> 
+      <entry> 
         <opcd_ext>7</opcd_ext> 
 	<proc_start>10</proc_start>   
-	<syntax>
+	<syntax mod="mem">
 	  <mnem>CLFLUSH</mnem>
 	  <src depend="no"><a>M</a><t>b</t></src>   
 	</syntax>
@@ -13105,11 +13105,11 @@
 	<grp1>cachect</grp1>
 	<note><brief>Flush Cache Line</brief></note>
       </entry>
-	  <entry mod="mem"> 
+	  <entry> 
 	  	<pref>66</pref>
         <opcd_ext>7</opcd_ext> 
 	<proc_start>13</proc_start>   
-	<syntax>
+	<syntax mod="mem">
 	  <mnem>CLFLUSHOPT</mnem>
 	  <src depend="no"><a>M</a><t>b</t></src>   
 	</syntax>
