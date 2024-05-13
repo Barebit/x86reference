@@ -7941,10 +7941,8 @@
 	<proc_start>03</proc_start>
 	<syntax>
           <mnem>MOV</mnem>
-          <!-- 1.02 <dst depend="no"><a>D</a><t>dqp</t></dst>-->
-          <!-- 1.02 <src><a>H</a><t>dqp</t></src>-->
-          <dst depend="no"><a>D</a><t>q</t></dst>
-          <src><a>H</a><t>q</t></src>
+          <dst depend="no"><a>D</a><t>d</t></dst>
+          <src><a>H</a><t>d</t></src>
         </syntax>
 	<grp1>system</grp1>
 	<modif_f>oszapc</modif_f><undef_f>oszapc</undef_f>
