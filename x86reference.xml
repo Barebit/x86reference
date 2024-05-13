@@ -7154,6 +7154,10 @@
 <!-- 0F12 -->
 
     <pri_opcd value="12">
+      <!-- although these instructions operate on packed FP values, -->
+      <!-- Intel manual indicates the operands with integer types; this is presumably because -->
+      <!-- the operands are treated as integers during the move operation -->
+
       <entry r="yes" mod="nomem">
 	<proc_start>09</proc_start>
 	<syntax>
@@ -7282,6 +7286,10 @@
     </pri_opcd>
     
     <pri_opcd value="15">
+      <!-- although these instructions operate on packed FP values, -->
+      <!-- Intel manual indicates the operand with integer type; this is presumably because -->
+      <!-- the operand is treated as integer during the move operation -->
+
       <entry r="yes">
 	<proc_start>09</proc_start>
 	<syntax>
@@ -7352,6 +7360,9 @@
       </entry>
 
       <entry r="yes"> 
+        <!-- although this instruction operates on packed FP values, -->
+        <!-- Intel manual indicates the operands with integer types; this is presumably because -->
+        <!-- the operands are treated as integers during the move operation -->
         <pref>F3</pref>   
 	<proc_start lat_step="yes">10</proc_start>   
 	<syntax>
