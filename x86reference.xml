@@ -1342,13 +1342,13 @@
 	  <mnem>OUTS</mnem>
 	  <dst nr="2" group="gen" type="w" depend="no">DX</dst>
 	  <!--<src><a>X</a><t>b</t></src> changed in 1.02-->
-	  <src type="b" address="X">(DS):[rSI]</src>
+	  <src type="b" address="X">(DS:)[rSI]</src>
 	</syntax>
 	<syntax>
 	  <mnem>OUTSB</mnem>
 	  <dst nr="2" group="gen" type="w" displayed="no" depend="no">DX</dst>
 	  <!--<src displayed="no"><a>X</a><t>b</t></src> changed in 1.02-->
-          <src type="b" address="X" displayed="no">(DS):[rSI]</src>
+          <src type="b" address="X" displayed="no">(DS:)[rSI]</src>
 	</syntax>
 	<grp1>gen</grp1><grp2>inout</grp2><grp2>string</grp2>
 	<test_f>d</test_f>
@@ -9903,6 +9903,7 @@
 	  <mnem>PALIGNR</mnem>
 	  <dst><a>P</a><t>q</t></dst>
 	  <src><a>Q</a><t>q</t></src>
+	  <src><a>I</a><t>b</t></src>
 	</syntax>
         <instr_ext>ssse3</instr_ext>  
 	<grp1>simdint</grp1>
@@ -9916,6 +9917,7 @@
 	  <mnem>PALIGNR</mnem>
 	  <dst><a>V</a><t>dq</t></dst>
 	  <src><a>W</a><t>dq</t></src>
+	  <src><a>I</a><t>b</t></src>
 	</syntax>
         <instr_ext>ssse3</instr_ext>  
 	<grp1>simdint</grp1>
