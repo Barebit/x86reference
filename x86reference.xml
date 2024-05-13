@@ -10113,6 +10113,7 @@
 	  <mnem>DPPS</mnem>
 	  <dst><a>V</a><t>ps</t></dst>
 	  <src><a>W</a><t>ps</t></src>
+          <src><a>I</a><t>b</t></src>
 	</syntax>
 	<instr_ext>sse41</instr_ext>
 	<grp1>simdfp</grp1>
@@ -10132,6 +10133,7 @@
 	  <mnem>DPPD</mnem>
 	  <dst><a>V</a><t>pd</t></dst>
 	  <src><a>W</a><t>pd</t></src>
+          <src><a>I</a><t>b</t></src>
 	</syntax>
 	<instr_ext>sse41</instr_ext>
 	<grp1>simdfp</grp1>
