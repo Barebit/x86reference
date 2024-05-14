@@ -91,6 +91,7 @@
 						<xs:enumeration value="smx"/>
 						<xs:enumeration value="sse41"/>
 						<xs:enumeration value="sse42"/>
+						<xs:enumeration value="lzcnt"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>

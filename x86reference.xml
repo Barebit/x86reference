@@ -13450,6 +13450,15 @@
 	<modif_f>oszapc</modif_f><def_f>z</def_f><undef_f>osapc</undef_f>
 	<note><brief>Bit Scan Reverse</brief></note>
       </entry>
+      <entry r="yes">
+	<pref>F3</pref>
+	<proc_start>-1</proc_start>
+	<syntax><mnem>LZCNT</mnem><dst><a>G</a><t>vqp</t></dst><src><a>E</a><t>vqp</t></src></syntax>
+	<instr_ext>lzcnt</instr_ext>
+	<grp1>gen</grp1><grp2>bit</grp2>
+	<modif_f>oszapc</modif_f><def_f>zc</def_f><undef_f>osap</undef_f>
+	<note><brief>Count the Number of Leading Zero Bits</brief></note>
+      </entry>
     </pri_opcd>
 
     <pri_opcd value="BE">
