@@ -3441,7 +3441,7 @@
       </entry>
       <entry>
 	<syntax>
-	  <mnem sug="yes">AMX</mnem>
+	  <mnem>AAM</mnem>
 	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
 	  <dst nr="4" group="gen" type="b" displayed="no" depend="no">AH</dst>
 	  <src><a>I</a><t>b</t></src>
@@ -3471,7 +3471,7 @@
       </entry>
       <entry>
 	<syntax>
-	  <mnem sug="yes">ADX</mnem>
+	  <mnem>AAD</mnem>
 	  <dst nr="0" group="gen" type="b" displayed="no">AL</dst>
 	  <dst nr="4" group="gen" type="b" displayed="no">AH</dst>
 	  <src><a>I</a><t>b</t></src>
