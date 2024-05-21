@@ -92,6 +92,7 @@
 						<xs:enumeration value="sse41"/>
 						<xs:enumeration value="sse42"/>
 						<xs:enumeration value="lzcnt"/>
+						<xs:enumeration value="bmi1"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
