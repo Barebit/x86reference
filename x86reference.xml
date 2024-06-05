@@ -13377,11 +13377,11 @@
     </pri_opcd>
 
     <pri_opcd value="B9">
-      <entry r="yes" attr="invd" doc="m"
-        doc_ref="gen_note_sug_UD_0FB9">   <!-- r=yes fixed in 1.02 -->
+      <!-- documented only in the newer manuals but it is not worth adding an extra undocumented entry -->
+      <entry r="yes" attr="invd">
         <proc_start>02</proc_start>
 	<syntax>
-          <mnem sug="yes">UD</mnem>
+          <mnem>UD1</mnem>
           <src depend="no"><a>G</a></src>
           <src depend="no"><a>E</a></src>
         </syntax>
